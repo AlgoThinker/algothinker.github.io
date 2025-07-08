@@ -1,9 +1,72 @@
-<html>
-  <head>
-    <title>My GitHub Page</title>
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-    <p>This is my free website hosted on GitHub Pages!</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎉 Welcome to My Fun Page!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #333;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ffffff;
+      text-shadow: 2px 2px #ff69b4;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 10px 0 30px;
+    }
+
+    button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #ff1493;
+    }
+
+    .confetti {
+      font-size: 2rem;
+      animation: float 1s infinite alternate;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="confetti">🎈 Hello, Internet! 🎈</h1>
+  <p>Welcome to my <strong>fun-tastic</strong> GitHub Pages website.</p>
+  <p>Made with ❤️ and a lot of ☕</p>
+  <button onclick="alert('You clicked the fun button! 🎉')">Click Me!</button>
+  <footer>© 2025 My Fun Page. Built with GitHub Pages 🚀</footer>
+</body>
 </html>
