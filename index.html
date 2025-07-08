@@ -40,7 +40,7 @@
       animation: fadeIn 2s ease-in;
     }
 
-    #activity {
+    #joke {
       font-size: 1.1rem;
       color: #fff;
       background: rgba(255, 255, 255, 0.05);
@@ -94,32 +94,34 @@
   </style>
 </head>
 <body>
-  <h1>🚀 Welcome to My Website</h1>
-  <p>Need something fun to do? Here's a random idea for you:</p>
+  <h1>😄 Welcome to My Site</h1>
+  <p>Here’s a random joke to brighten your day:</p>
 
-  <div id="activity">Loading activity...</div>
+  <div id="joke">Loading joke...</div>
 
-  <button onclick="getActivity()">Give Me Another Idea</button>
+  <button onclick="getJoke()">Tell Me Another Joke</button>
 
-  <footer>© 2025 | Powered by GitHub Pages + Bored API 🎯</footer>
+  <footer>© 2025 | Powered by GitHub Pages + Joke API 🎭</footer>
 
   <script>
-    async function getActivity() {
-      const activityBox = document.getElementById("activity");
-      activityBox.style.opacity = 0;
+    async function getJoke() {
+      const jokeBox = document.getElementById("joke");
+      jokeBox.style.opacity = 0;
+
       try {
-        const res = await fetch("https://www.boredapi.com/api/activity");
+        const res = await fetch("https://official-joke-api.appspot.com/jokes/random");
         const data = await res.json();
-        activityBox.textContent = `💡 ${data.activity}`;
-        activityBox.style.opacity = 1;
+        jokeBox.textContent = `${data.setup} 🤔 ... ${data.punchline} 😂`;
+        jokeBox.style.opacity = 1;
       } catch (err) {
-        activityBox.textContent = "⚠️ Couldn't load activity. Try again!";
-        activityBox.style.opacity = 1;
+        console.error("Fetch error:", err);
+        jokeBox.textContent = "⚠️ Couldn't load a joke. Try again later.";
+        jokeBox.style.opacity = 1;
       }
     }
 
-    // Load one on page load
-    getActivity();
+    // Load joke on page load
+    getJoke();
   </script>
 </body>
 </html>
